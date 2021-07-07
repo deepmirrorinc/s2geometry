@@ -53,7 +53,7 @@
 #include "s2/third_party/absl/memory/memory.h"
 
 using s2::abslWrapUnique;
-using s2::abslmake_unique;
+using s2::absl::make_unique;
 using s2textformat::MakePolyline;
 using std::unique_ptr;
 using std::vector;

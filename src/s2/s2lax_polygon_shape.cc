@@ -19,7 +19,7 @@
 
 #include "s2/s2shapeutil_get_reference_point.h"
 
-using s2::abslmake_unique;
+using s2::absl::make_unique;
 using s2::abslMakeSpan;
 using s2::abslSpan;
 using std::vector;

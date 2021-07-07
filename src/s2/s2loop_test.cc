@@ -54,7 +54,7 @@
 #include "s2/util/math/matrix3x3.h"
 #include "s2/util/math/vector.h"
 
-using s2::abslmake_unique;
+using s2::absl::make_unique;
 using std::fabs;
 using std::map;
 using std::max;

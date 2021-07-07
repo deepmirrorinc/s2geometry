@@ -54,7 +54,7 @@
 
 using s2::abslStrAppend;
 using s2::abslStrCat;
-using s2::abslmake_unique;
+using s2::absl::make_unique;
 using std::cout;
 using std::endl;
 using std::make_pair;
@@ -532,7 +532,7 @@ class GraphPersistenceLayer : public S2Builder::Layer {
       ExpectGraphsEqual((*clones_)[i]->graph(), (*graphs_)[i]);
     }
     graphs_->push_back(g);
-    clones_->push_back(s2::abslmake_unique<GraphClone>(g));
+    clones_->push_back(s2::absl::make_unique<GraphClone>(g));
   }
 
  private:

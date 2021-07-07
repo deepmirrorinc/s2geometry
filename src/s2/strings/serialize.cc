@@ -22,7 +22,7 @@
 #include "s2/third_party/absl/strings/string_view.h"
 
 using s2::abslStrSplit;
-using s2::abslstring_view;
+using s2::absl::string_view;
 using std::pair;
 using std::string;
 using std::vector;

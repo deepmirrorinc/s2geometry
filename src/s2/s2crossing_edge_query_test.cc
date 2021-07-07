@@ -41,7 +41,7 @@
 #include "s2/third_party/absl/memory/memory.h"
 #include "s2/third_party/absl/strings/str_cat.h"
 
-using s2::abslmake_unique;
+using s2::absl::make_unique;
 using s2::abslStrCat;
 using s2shapeutil::ShapeEdge;
 using s2shapeutil::ShapeEdgeId;

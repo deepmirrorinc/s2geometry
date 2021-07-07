@@ -28,7 +28,7 @@
 #include "s2/s2builderutil_snap_functions.h"
 #include "s2/s2text_format.h"
 
-using s2::abslmake_unique;
+using s2::absl::make_unique;
 using s2builderutil::IndexedS2PolylineVectorLayer;
 using s2builderutil::S2PolylineVectorLayer;
 using s2textformat::MakePolylineOrDie;

@@ -79,7 +79,7 @@
 //                        const vector<S2Polygon*>& polygons) {
 //     MutableS2ShapeIndex index;
 //     for (auto polygon : polygons) {
-//       index.Add(s2::abslmake_unique<S2Polygon::Shape>(polygon));
+//       index.Add(s2::absl::make_unique<S2Polygon::Shape>(polygon));
 //     }
 //     auto query = MakeS2ContainsPointQuery(&index);
 //     for (const auto& point : points) {
@@ -558,7 +558,7 @@ inline void MutableS2ShapeIndex::Iterator::Seek(S2CellId target) {
 
 inline std::unique_ptr<MutableS2ShapeIndex::IteratorBase>
 MutableS2ShapeIndex::NewIterator(InitialPosition pos) const {
-  return s2::abslmake_unique<Iterator>(this, pos);
+  return s2::absl::make_unique<Iterator>(this, pos);
 }
 
 inline bool MutableS2ShapeIndex::is_fresh() const {

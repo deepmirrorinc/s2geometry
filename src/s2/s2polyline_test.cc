@@ -37,7 +37,7 @@
 #include "s2/util/coding/coder.h"
 
 using s2::abslStrCat;
-using s2::abslmake_unique;
+using s2::absl::make_unique;
 using std::fabs;
 using std::unique_ptr;
 using std::vector;

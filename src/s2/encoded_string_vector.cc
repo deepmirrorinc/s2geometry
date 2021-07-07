@@ -19,7 +19,7 @@
 
 using s2::abslMakeSpan;
 using s2::abslSpan;
-using s2::abslstring_view;
+using s2::absl::string_view;
 using std::vector;
 
 namespace s2coding {

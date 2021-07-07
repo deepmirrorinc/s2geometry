@@ -21,7 +21,7 @@
 #include "s2/base/logging.h"
 #include "s2/s2polyline.h"
 
-using s2::abslmake_unique;
+using s2::absl::make_unique;
 using s2::abslMakeSpan;
 using std::vector;
 

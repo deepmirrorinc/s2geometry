@@ -57,7 +57,7 @@ struct FaceRun {
     // but since this would only help if there were more than 21 faces, it will
     // be a small overall savings, much smaller than the bound encoding.
     encoder->put_varint64(
-        S2CellId::kNumFaces * s2::abslimplicit_cast<int64>(count) + face);
+        S2CellId::kNumFaces * s2::absl::implicit_cast<int64>(count) + face);
     S2_DCHECK_GE(encoder->avail(), 0);
   }
 

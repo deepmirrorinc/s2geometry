@@ -68,7 +68,7 @@
 #include "s2/util/math/matrix3x3.h"
 
 using s2::abslStrCat;
-using s2::abslmake_unique;
+using s2::absl::make_unique;
 using s2builderutil::IntLatLngSnapFunction;
 using s2builderutil::S2PolygonLayer;
 using std::max;

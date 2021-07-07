@@ -41,7 +41,7 @@
 #include "s2/s2testing.h"
 #include "s2/s2text_format.h"
 
-using s2::abslmake_unique;
+using s2::absl::make_unique;
 using s2::abslStrCat;
 using s2builderutil::S2CellIdSnapFunction;
 using s2builderutil::S2PolylineLayer;
@@ -213,7 +213,7 @@ class IndexedLaxPolylineLayer : public S2Builder::Layer {
   void Build(const Graph& g, S2Error* error) override {
     layer_.Build(g, error);
     if (error->ok() && polyline_->num_vertices() > 0) {
-      index_->Add(s2::abslmake_unique<S2LaxPolylineShape>(*polyline_));
+      index_->Add(s2::absl::make_unique<S2LaxPolylineShape>(*polyline_));
     }
   }
 

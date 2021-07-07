@@ -483,7 +483,7 @@ TEST(JavaCcConsistency, CheckCovering) {
   std::vector<S2Point> points = {
       S2LatLng::FromDegrees(-33.8663457, 151.1960891).ToPoint(),
       S2LatLng::FromDegrees(-33.866094000000004, 151.19517439999998).ToPoint()};
-  std::unique_ptr<S2Polyline> polyline = s2::abslmake_unique<S2Polyline>(points);
+  std::unique_ptr<S2Polyline> polyline = s2::absl::make_unique<S2Polyline>(points);
   S2RegionCoverer coverer;
   coverer.mutable_options()->set_min_level(0);
   coverer.mutable_options()->set_max_level(22);

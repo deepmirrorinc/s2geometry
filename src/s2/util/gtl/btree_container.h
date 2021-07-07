@@ -300,13 +300,13 @@ class btree_map_container : public btree_set_container<Tree> {
   mapped_type &at(const key_type &key) {
     auto it = this->find(key);
     if (it == this->end())
-      s2::abslbase_internal::ThrowStdOutOfRange("btree_map::at");
+      s2::absl::base_internal::ThrowStdOutOfRange("btree_map::at");
     return it->second;
   }
   const mapped_type &at(const key_type &key) const {
     auto it = this->find(key);
     if (it == this->end())
-      s2::abslbase_internal::ThrowStdOutOfRange("btree_map::at");
+      s2::absl::base_internal::ThrowStdOutOfRange("btree_map::at");
     return it->second;
   }
 };

@@ -69,7 +69,7 @@
 #include "s2/third_party/absl/memory/memory.h"
 #include "s2/util/coding/coder.h"
 
-using s2::abslmake_unique;
+using s2::absl::make_unique;
 using s2builderutil::IdentitySnapFunction;
 using s2builderutil::S2PolygonLayer;
 using s2builderutil::S2PolylineLayer;

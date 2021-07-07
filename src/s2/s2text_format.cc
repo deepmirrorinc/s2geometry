@@ -34,8 +34,8 @@
 #include "s2/s2polygon.h"
 #include "s2/s2polyline.h"
 
-using s2::abslmake_unique;
-using s2::abslstring_view;
+using s2::absl::make_unique;
+using s2::absl::string_view;
 using std::pair;
 using std::unique_ptr;
 using std::vector;

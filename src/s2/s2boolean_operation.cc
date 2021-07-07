@@ -88,7 +88,7 @@ extern bool s2builder_verbose;
 
 namespace {  // Anonymous namespace for helper classes.
 
-using s2::abslmake_unique;
+using s2::absl::make_unique;
 using std::make_pair;
 using std::max;
 using std::min;
