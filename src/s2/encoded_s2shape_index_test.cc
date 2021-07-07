@@ -42,7 +42,7 @@
 #include "s2/s2text_format.h"
 
 using s2::absl::make_unique;
-using s2::abslStrCat;
+using s2::absl::StrCat;
 using s2builderutil::S2CellIdSnapFunction;
 using s2builderutil::S2PolylineLayer;
 using std::max;

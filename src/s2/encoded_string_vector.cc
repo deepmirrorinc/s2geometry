@@ -17,8 +17,8 @@
 
 #include "s2/encoded_string_vector.h"
 
-using s2::abslMakeSpan;
-using s2::abslSpan;
+using s2::absl::MakeSpan;
+using s2::absl::Span;
 using s2::absl::string_view;
 using std::vector;
 

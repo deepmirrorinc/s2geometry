@@ -33,7 +33,7 @@
 #include "s2/util/coding/transforms.h"
 #include "s2/util/endian/endian.h"
 
-using s2::abslSpan;
+using s2::absl::Span;
 using std::pair;
 using std::vector;
 
@@ -317,7 +317,7 @@ bool DecodePointCompressed(Decoder* decoder,
 void S2EncodePointsCompressed(Span<const S2XYZFaceSiTi> points,
                               int level,
                               Encoder* encoder) {
-  s2::abslFixedArray<pair<int, int>> vertices_pi_qi(points.size());
+  s2::absl::FixedArray<pair<int, int>> vertices_pi_qi(points.size());
   vector<int> off_center;
   Faces faces;
   for (int i = 0; i < points.size(); ++i) {

@@ -39,7 +39,7 @@ static const int kIters = 10000;
 // "max_digits" after the decimal point and has no trailing zeros.
 void ExpectMaxDigits(const S2LatLng& ll, int max_digits) {
   string result = s2textformat::ToString(ll.ToPoint());
-  vector<string> values = s2::abslStrSplit(result, ':', s2::abslSkipEmpty());
+  vector<string> values = s2::absl::StrSplit(result, ':', s2::absl::SkipEmpty());
   EXPECT_EQ(2, values.size()) << result;
   for (const auto& value : values) {
     int num_digits = 0;

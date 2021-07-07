@@ -60,7 +60,7 @@
 #include "s2/util/math/matrix3x3.h"
 
 using s2::absl::make_unique;
-using s2::abslMakeSpan;
+using s2::absl::MakeSpan;
 using std::pair;
 using std::set;
 using std::vector;

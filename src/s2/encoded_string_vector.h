@@ -61,7 +61,7 @@ class StringVectorEncoder {
   //
   // REQUIRES: "encoder" uses the default constructor, so that its buffer
   //           can be enlarged as necessary by calling Ensure(int).
-  static void Encode(s2::abslSpan<const string> v, Encoder* encoder);
+  static void Encode(s2::absl::Span<const string> v, Encoder* encoder);
 
  private:
   // A vector consisting of the starting offset of each string in the

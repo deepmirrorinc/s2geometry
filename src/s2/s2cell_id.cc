@@ -33,7 +33,7 @@
 #include "s2/third_party/absl/base/casts.h"
 #include "s2/third_party/absl/strings/str_cat.h"
 
-using s2::abslStrCat;
+using s2::absl::StrCat;
 using S2::internal::kSwapMask;
 using S2::internal::kInvertMask;
 using S2::internal::kPosToIJ;
@@ -587,7 +587,7 @@ void S2CellId::AppendAllNeighbors(int nbr_level,
 
 string S2CellId::ToString() const {
   if (!is_valid()) {
-    return StrCat("Invalid: ", s2::abslHex(id(), s2::absl::kZeroPad16));
+    return StrCat("Invalid: ", s2::absl::Hex(id(), s2::absl::kZeroPad16));
   }
   string out = StrCat(face(), "/");
   for (int current_level = 1; current_level <= level(); ++current_level) {

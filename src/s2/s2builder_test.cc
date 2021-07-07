@@ -52,8 +52,8 @@
 #include "s2/s2testing.h"
 #include "s2/s2text_format.h"
 
-using s2::abslStrAppend;
-using s2::abslStrCat;
+using s2::absl::StrAppend;
+using s2::absl::StrCat;
 using s2::absl::make_unique;
 using std::cout;
 using std::endl;
@@ -579,8 +579,8 @@ void TestPolylineLayers(
   for (const auto& polyline : output) {
     output_strs.push_back(s2textformat::ToString(*polyline));
   }
-  EXPECT_EQ(s2::abslStrJoin(expected_strs, "; "),
-            s2::abslStrJoin(output_strs, "; "));
+  EXPECT_EQ(s2::absl::StrJoin(expected_strs, "; "),
+            s2::absl::StrJoin(output_strs, "; "));
 }
 
 void TestPolylineVector(
@@ -601,8 +601,8 @@ void TestPolylineVector(
   for (const auto& polyline : output) {
     output_strs.push_back(s2textformat::ToString(*polyline));
   }
-  EXPECT_EQ(s2::abslStrJoin(expected_strs, "; "),
-            s2::abslStrJoin(output_strs, "; "));
+  EXPECT_EQ(s2::absl::StrJoin(expected_strs, "; "),
+            s2::absl::StrJoin(output_strs, "; "));
 }
 
 void TestPolylineLayersBothEdgeTypes(

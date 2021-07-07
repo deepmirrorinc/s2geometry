@@ -106,8 +106,8 @@ class Bits {
 
   // Count bits in uint128
   static inline int CountOnes128(s2::absl::uint128 n) {
-    return Bits::CountOnes64(s2::abslUint128High64(n)) +
-           Bits::CountOnes64(s2::abslUint128Low64(n));
+    return Bits::CountOnes64(s2::absl::Uint128High64(n)) +
+           Bits::CountOnes64(s2::absl::Uint128Low64(n));
   }
 
   // Count leading zeroes.  This is similar to wordsize - 1 - floor(log2(n)).
@@ -172,9 +172,9 @@ class Bits {
   }
 
   static inline int CountLeadingZeros128(s2::absl::uint128 n) {
-    if (uint64 hi = s2::abslUint128High64(n))
+    if (uint64 hi = s2::absl::Uint128High64(n))
       return Bits::CountLeadingZeros64(hi);
-    return Bits::CountLeadingZeros64(s2::abslUint128Low64(n)) + 64;
+    return Bits::CountLeadingZeros64(s2::absl::Uint128Low64(n)) + 64;
   }
 
   // Reverse the bits in the given integer.
@@ -475,18 +475,18 @@ inline int Bits::FindLSBSetNonZero64(uint64 n) {
 #endif
 
 inline int Bits::Log2Floor128(s2::absl::uint128 n) {
-  if (uint64 hi = s2::abslUint128High64(n)) return 64 + Log2FloorNonZero64(hi);
-  return Log2Floor64(s2::abslUint128Low64(n));
+  if (uint64 hi = s2::absl::Uint128High64(n)) return 64 + Log2FloorNonZero64(hi);
+  return Log2Floor64(s2::absl::Uint128Low64(n));
 }
 
 inline int Bits::Log2FloorNonZero128(s2::absl::uint128 n) {
-  if (uint64 hi = s2::abslUint128High64(n)) return 64 + Log2FloorNonZero64(hi);
-  return Log2FloorNonZero64(s2::abslUint128Low64(n));
+  if (uint64 hi = s2::absl::Uint128High64(n)) return 64 + Log2FloorNonZero64(hi);
+  return Log2FloorNonZero64(s2::absl::Uint128Low64(n));
 }
 
 inline int Bits::FindLSBSetNonZero128(s2::absl::uint128 n) {
-  if (uint64 lo = s2::abslUint128Low64(n)) return Bits::FindLSBSetNonZero64(lo);
-  return 64 + Bits::FindLSBSetNonZero64(s2::abslUint128High64(n));
+  if (uint64 lo = s2::absl::Uint128Low64(n)) return Bits::FindLSBSetNonZero64(lo);
+  return 64 + Bits::FindLSBSetNonZero64(s2::absl::Uint128High64(n));
 }
 
 inline int Bits::CountOnesInByte(unsigned char n) {
@@ -563,8 +563,8 @@ inline uint64 Bits::ReverseBits64(uint64 n) {
 }
 
 inline s2::absl::uint128 Bits::ReverseBits128(s2::absl::uint128 n) {
-  return s2::abslMakeUint128(ReverseBits64(s2::abslUint128Low64(n)),
-                           ReverseBits64(s2::abslUint128High64(n)));
+  return s2::absl::MakeUint128(ReverseBits64(s2::absl::Uint128Low64(n)),
+                           ReverseBits64(s2::absl::Uint128High64(n)));
 }
 
 inline int Bits::Log2FloorNonZero_Portable(uint32 n) {

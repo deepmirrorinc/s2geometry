@@ -46,7 +46,7 @@
 #include "s2/third_party/absl/strings/str_cat.h"
 #include "s2/third_party/absl/strings/str_split.h"
 
-using s2::abslStrCat;
+using s2::absl::StrCat;
 using std::max;
 using std::min;
 using std::priority_queue;
@@ -276,7 +276,7 @@ static void TestAccuracy(int max_cells) {
 
 TEST(S2RegionCoverer, Accuracy) {
   for (auto max_cells :
-           s2::abslStrSplit(FLAGS_max_cells, ',', s2::abslSkipEmpty())) {
+           s2::absl::StrSplit(FLAGS_max_cells, ',', s2::absl::SkipEmpty())) {
     TestAccuracy(atoi32(string(max_cells).c_str()));
   }
 }

@@ -115,9 +115,9 @@ string S2RegionTermIndexer::GetTerm(TermType term_type, const S2CellId& id,
   // There are generally more ancestor terms than covering terms, so we add
   // the extra "marker" character to the covering terms to distinguish them.
   if (term_type == TermType::ANCESTOR) {
-    return s2::abslStrCat(prefix, id.ToToken());
+    return s2::absl::StrCat(prefix, id.ToToken());
   } else {
-    return s2::abslStrCat(prefix, options_.marker(), id.ToToken());
+    return s2::absl::StrCat(prefix, options_.marker(), id.ToToken());
   }
 }
 

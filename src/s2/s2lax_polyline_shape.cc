@@ -22,7 +22,7 @@
 #include "s2/s2polyline.h"
 
 using s2::absl::make_unique;
-using s2::abslMakeSpan;
+using s2::absl::MakeSpan;
 using std::vector;
 
 S2LaxPolylineShape::S2LaxPolylineShape(const vector<S2Point>& vertices) {

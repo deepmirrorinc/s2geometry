@@ -33,7 +33,7 @@
 #include "s2/s2pointutil.h"
 #include "s2/s2testing.h"
 
-using s2::abslStrCat;
+using s2::absl::StrCat;
 using std::fabs;
 using std::max;
 

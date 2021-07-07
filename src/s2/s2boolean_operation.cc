@@ -174,7 +174,7 @@ struct CrossingGraphEdge {
   bool outgoing;
   VertexId dst;
 };
-using CrossingGraphEdgeVector = s2::abslInlinedVector<CrossingGraphEdge, 2>;
+using CrossingGraphEdgeVector = s2::absl::InlinedVector<CrossingGraphEdge, 2>;
 
 // Returns a vector of EdgeIds sorted by input edge id.  When more than one
 // output edge has the same input edge id (i.e., the input edge snapped to a

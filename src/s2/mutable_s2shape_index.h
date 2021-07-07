@@ -458,7 +458,7 @@ class MutableS2ShapeIndex final : public S2ShapeIndex {
     // This mutex is used as a condition variable.  It is locked by the
     // updating thread for the entire duration of the update; other threads
     // lock it in order to wait until the update is finished.
-    s2::abslMutex wait_mutex;
+    s2::absl::Mutex wait_mutex;
 
     // The number of threads currently waiting on "wait_mutex_".  The
     // UpdateState can only be freed when this number reaches zero.

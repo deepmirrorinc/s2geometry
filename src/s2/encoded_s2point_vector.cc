@@ -22,8 +22,8 @@
 #include "s2/s2cell_id.h"
 #include "s2/s2coords.h"
 
-using s2::abslMakeSpan;
-using s2::abslSpan;
+using s2::absl::MakeSpan;
+using s2::absl::Span;
 using std::max;
 using std::min;
 using std::vector;

@@ -82,8 +82,8 @@ inline uint16 gbswap_16(uint16 host_int) {
 #endif  // intrinics available
 
 inline s2::absl::uint128 gbswap_128(s2::absl::uint128 host_int) {
-  return s2::abslMakeUint128(gbswap_64(s2::abslUint128Low64(host_int)),
-                           gbswap_64(s2::abslUint128High64(host_int)));
+  return s2::absl::MakeUint128(gbswap_64(s2::absl::Uint128Low64(host_int)),
+                           gbswap_64(s2::absl::Uint128High64(host_int)));
 }
 
 #ifdef IS_LITTLE_ENDIAN
@@ -300,15 +300,15 @@ class LittleEndian {
   }
 
   static s2::absl::uint128 Load128(const void* p) {
-    return s2::abslMakeUint128(
+    return s2::absl::MakeUint128(
         ToHost64(UNALIGNED_LOAD64(reinterpret_cast<const uint64*>(p) + 1)),
         ToHost64(UNALIGNED_LOAD64(p)));
   }
 
   static void Store128(void* p, const s2::absl::uint128 v) {
-    UNALIGNED_STORE64(p, FromHost64(s2::abslUint128Low64(v)));
+    UNALIGNED_STORE64(p, FromHost64(s2::absl::Uint128Low64(v)));
     UNALIGNED_STORE64(reinterpret_cast<uint64*>(p) + 1,
-                      FromHost64(s2::abslUint128High64(v)));
+                      FromHost64(s2::absl::Uint128High64(v)));
   }
 
   // Build a uint128 from 1-16 bytes.
@@ -319,7 +319,7 @@ class LittleEndian {
     if (len <= 8) {
       return s2::absl::uint128(Load64VariableLength(p, len));
     } else {
-      return s2::abslMakeUint128(
+      return s2::absl::MakeUint128(
           Load64VariableLength(static_cast<const char*>(p) + 8, len - 8),
           Load64(p));
     }
@@ -484,15 +484,15 @@ class BigEndian {
   }
 
   static s2::absl::uint128 Load128(const void* p) {
-    return s2::abslMakeUint128(
+    return s2::absl::MakeUint128(
         ToHost64(UNALIGNED_LOAD64(p)),
         ToHost64(UNALIGNED_LOAD64(reinterpret_cast<const uint64*>(p) + 1)));
   }
 
   static void Store128(void* p, const s2::absl::uint128 v) {
-    UNALIGNED_STORE64(p, FromHost64(s2::abslUint128High64(v)));
+    UNALIGNED_STORE64(p, FromHost64(s2::absl::Uint128High64(v)));
     UNALIGNED_STORE64(reinterpret_cast<uint64*>(p) + 1,
-                      FromHost64(s2::abslUint128Low64(v)));
+                      FromHost64(s2::absl::Uint128Low64(v)));
   }
 
   // Build a uint128 from 1-16 bytes.
@@ -504,10 +504,10 @@ class BigEndian {
       return s2::absl::uint128(
           Load64VariableLength(static_cast<const char*>(p), len));
     } else if (len < 16) {
-      return s2::abslMakeUint128(Load64VariableLength(p, len - 8),
+      return s2::absl::MakeUint128(Load64VariableLength(p, len - 8),
                                Load64(static_cast<const char*>(p) + len - 8));
     } else {
-      return s2::abslMakeUint128(Load64(static_cast<const char*>(p)),
+      return s2::absl::MakeUint128(Load64(static_cast<const char*>(p)),
                                Load64(static_cast<const char*>(p) + 8));
     }
   }
