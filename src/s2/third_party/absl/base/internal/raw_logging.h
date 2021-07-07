@@ -44,9 +44,9 @@
 #define ABSL_RAW_LOG(severity, ...)                                            \
   do {                                                                         \
     constexpr const char* absl_raw_logging_internal_basename =                 \
-        ::::s2::absl::raw_logging_internal::Basename(__FILE__,                       \
+        ::s2::absl::raw_logging_internal::Basename(__FILE__,                       \
                                                sizeof(__FILE__) - 1);          \
-    ::::s2::absl::raw_logging_internal::RawLog(ABSL_RAW_LOGGING_INTERNAL_##severity, \
+    ::s2::absl::raw_logging_internal::RawLog(ABSL_RAW_LOGGING_INTERNAL_##severity, \
                                          absl_raw_logging_internal_basename,   \
                                          __LINE__, __VA_ARGS__);               \
   } while (0)
@@ -54,10 +54,10 @@
 #define ABSL_RAW_LOG(severity, ...)                                            \
   do {                                                                         \
     constexpr const char* absl_raw_logging_internal_basename =                 \
-        ::::s2::absl::raw_logging_internal::Basename(__FILE__,                       \
+        ::s2::absl::raw_logging_internal::Basename(__FILE__,                       \
                                                sizeof(__FILE__) - 1);          \
-    if (ABSL_RAW_LOGGING_INTERNAL_##severity == ::::s2::absl::LogSeverity::kFatal)   \
-      ::::s2::absl::raw_logging_internal::RawLog(::::s2::absl::LogSeverity::kFatal,        \
+    if (ABSL_RAW_LOGGING_INTERNAL_##severity == ::s2::absl::LogSeverity::kFatal)   \
+      ::s2::absl::raw_logging_internal::RawLog(::s2::absl::LogSeverity::kFatal,        \
                                            absl_raw_logging_internal_basename, \
                                            __LINE__, __VA_ARGS__);             \
   } while (0)
@@ -89,13 +89,13 @@
 
 #endif  // NDEBUG
 
-#define ABSL_RAW_LOGGING_INTERNAL_INFO ::::s2::absl::LogSeverity::kInfo
-#define ABSL_RAW_LOGGING_INTERNAL_WARNING ::::s2::absl::LogSeverity::kWarning
-#define ABSL_RAW_LOGGING_INTERNAL_ERROR ::::s2::absl::LogSeverity::kError
-#define ABSL_RAW_LOGGING_INTERNAL_FATAL ::::s2::absl::LogSeverity::kFatal
-#define ABSL_RAW_LOGGING_INTERNAL_DFATAL ::::s2::absl::kLogDebugFatal
+#define ABSL_RAW_LOGGING_INTERNAL_INFO ::s2::absl::LogSeverity::kInfo
+#define ABSL_RAW_LOGGING_INTERNAL_WARNING ::s2::absl::LogSeverity::kWarning
+#define ABSL_RAW_LOGGING_INTERNAL_ERROR ::s2::absl::LogSeverity::kError
+#define ABSL_RAW_LOGGING_INTERNAL_FATAL ::s2::absl::LogSeverity::kFatal
+#define ABSL_RAW_LOGGING_INTERNAL_DFATAL ::s2::absl::kLogDebugFatal
 #define ABSL_RAW_LOGGING_INTERNAL_LEVEL(severity) \
-  ::::s2::absl::NormalizeLogSeverity(severity)
+  ::s2::absl::NormalizeLogSeverity(severity)
 
 namespace s2::absl {
 namespace raw_logging_internal {

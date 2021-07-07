@@ -230,17 +230,17 @@ struct Unaligned32Struct {
 }  // namespace s2::absl
 
 #define ABSL_INTERNAL_UNALIGNED_LOAD16(_p)                                  \
-  ((reinterpret_cast<const ::::s2::absl::base_internal::Unaligned16Struct *>(_p)) \
+  ((reinterpret_cast<const ::s2::absl::base_internal::Unaligned16Struct *>(_p)) \
        ->value)
 #define ABSL_INTERNAL_UNALIGNED_LOAD32(_p)                                  \
-  ((reinterpret_cast<const ::::s2::absl::base_internal::Unaligned32Struct *>(_p)) \
+  ((reinterpret_cast<const ::s2::absl::base_internal::Unaligned32Struct *>(_p)) \
        ->value)
 
 #define ABSL_INTERNAL_UNALIGNED_STORE16(_p, _val)                      \
-  ((reinterpret_cast< ::::s2::absl::base_internal::Unaligned16Struct *>(_p)) \
+  ((reinterpret_cast< ::s2::absl::base_internal::Unaligned16Struct *>(_p)) \
        ->value = (_val))
 #define ABSL_INTERNAL_UNALIGNED_STORE32(_p, _val)                      \
-  ((reinterpret_cast< ::::s2::absl::base_internal::Unaligned32Struct *>(_p)) \
+  ((reinterpret_cast< ::s2::absl::base_internal::Unaligned32Struct *>(_p)) \
        ->value = (_val))
 
 namespace s2::absl {

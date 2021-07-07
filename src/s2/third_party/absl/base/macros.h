@@ -39,7 +39,7 @@
 // can be used in defining new arrays. If you use this macro on a pointer by
 // mistake, you will get a compile-time error.
 #define ABSL_ARRAYSIZE(array) \
-  (sizeof(::::s2::absl::macros_internal::ArraySizeHelper(array)))
+  (sizeof(::s2::absl::macros_internal::ArraySizeHelper(array)))
 
 namespace s2::absl {
 namespace macros_internal {
