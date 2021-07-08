@@ -22,7 +22,7 @@
 #include <streambuf>
 #include <string>
 
-#include "s2/third_party/absl/base/port.h"
+#include "absl/base/port.h"
 
 namespace strings {
 
